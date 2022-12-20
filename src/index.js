@@ -95,7 +95,7 @@ let totalPages = Math.ceil(name.totalHits / perPage);
       renderGallery(name);
        if (page >= totalPages) {
         loadBtn.style.display = 'none';
-        console.log('There are no more images');
+
         Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
       }
     })
