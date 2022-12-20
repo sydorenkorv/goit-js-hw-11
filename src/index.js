@@ -34,7 +34,7 @@ async function fetchImages(name, page) {
 
 function renderGallery(name) {
   const renderList = name.hits.map(hit => hit);
-  console.log(renderList);
+
 
   const markup = galleryCard(renderList);
   cardList.insertAdjacentHTML('beforeend', markup);
