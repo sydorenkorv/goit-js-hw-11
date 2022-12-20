@@ -69,9 +69,9 @@ async function onSearch(e) {
     Notiflix.Notify.success(`Hooray! We found ${name.totalHits} images.`);
 
     renderGallery(name);
+
+    
   }
-
-
   else {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
@@ -91,8 +91,13 @@ loadBtn.addEventListener(
     page += 1;
 
     fetchImages(name, page).then(name => {
-
+let totalPages = Math.ceil(name.totalHits / perPage);
       renderGallery(name);
+       if (page >= totalPages) {
+        loadBtn.style.display = 'none';
+        console.log('There are no more images');
+        Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+      }
     })
   })
 
