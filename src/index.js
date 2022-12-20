@@ -45,6 +45,7 @@ console.log (response.data)
 function renderGallery(name) {
 
     const renderList = name.hits.map(hit => hit)
+  console.log(renderList)
  
     const markup = galleryCard(renderList);
   cardList.insertAdjacentHTML('beforeend', markup);
@@ -87,20 +88,11 @@ loadBtn.addEventListener(
   'click',
   () => {
     name = searchQuery.value;
-    let totalPages = Math.ceil(name.totalHits / perPage);
-
-        if (page < totalPages) {
-          loadBtn.style.display = 'block';
-          page += 1;
+    page += 1;
 
     fetchImages(name, page).then(name => {
 
       renderGallery(name);
     })
-        } else {
-          loadBtn.style.display = 'none';
-
-          Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
-        }
   })
 
