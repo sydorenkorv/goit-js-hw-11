@@ -45,7 +45,6 @@ console.log (response.data)
 function renderGallery(name) {
 
     const renderList = name.hits.map(hit => hit)
-  console.log(renderList)
  
     const markup = galleryCard(renderList);
   cardList.insertAdjacentHTML('beforeend', markup);
@@ -88,7 +87,7 @@ loadBtn.addEventListener(
   'click',
   () => {
     name = searchQuery.value;
-    
+    let totalPages = Math.ceil(name.totalHits / perPage);
 
         if (page < totalPages) {
           loadBtn.style.display = 'block';
