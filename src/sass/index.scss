@@ -1,11 +1,64 @@
 @import './common';
 @import './example';
 
+.photo-card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 3px;
+  width: 320px;
+  overflow: hidden;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-card img {
+  display: block;
+  margin: 0 auto;
+  max-height: 240px;
+  max-width: auto;
 }
 
 .info {
   display: flex;
+  justify-content: space-between;
+}
+
+.search-form {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.input {
+  border-radius: 6px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
+  background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+}
+
+.button:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+    0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
 }
