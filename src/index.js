@@ -52,7 +52,9 @@ async function onSearch(e) {
   e.preventDefault();
   clearAll();
   name = searchQuery.value;
-  fetchImages(name).then(name => {
+      page =1
+  fetchImages(name, page).then(name => {
+
     if (name.hits.length > 0) {
       Notiflix.Notify.success(`Hooray! We found ${name.totalHits} images.`);
 
