@@ -24,7 +24,7 @@ const KEY = '32124506-65f1bceba0e647ef73939c9d6'
 
 
 
-// console.log(name.hits)
+
 
 async function fetchImages(name, page) {
 
@@ -34,7 +34,7 @@ async function fetchImages(name, page) {
       `${URL}/?key=${KEY}&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`,
     );
 
-console.log (response.data)
+
       return response.data;
       
   } catch (error) {
